@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using myfinance_web_dotnet.Infrastructure;
 using myfinance_web_dotnet.Models;
 using System.Diagnostics;
 
@@ -6,12 +7,6 @@ namespace myfinance_web_dotnet.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public IActionResult Index()
         {
