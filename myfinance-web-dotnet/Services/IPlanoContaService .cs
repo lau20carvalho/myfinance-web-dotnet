@@ -7,6 +7,6 @@ namespace myfinance_web_dotnet.Services
         List<PlanoConta> ListarRegistros();
         void Salvar(PlanoConta planoConta);
         void Excluir(int id);
-        PlanoConta Buscar(int id);
+        PlanoConta BuscarRegistro(int id);
     }
 }

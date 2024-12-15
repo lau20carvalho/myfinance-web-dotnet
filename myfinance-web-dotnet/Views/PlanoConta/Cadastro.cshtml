@@ -10,8 +10,8 @@
         <form class="row g-3" asp-controller="PlanoConta" asp-action="Cadastro" method="post">
             <div class="mb-3 col-4">
                 <label for="txtNome" class="form-label">Descrição</label>
-                <input type="hidden" id="txtId" asp-for="Id" value="@ViewData["Id"]">
-                <input type="text" class="form-control" id="txtNome" asp-for="Nome" value="@ViewData["Nome"]">
+                <input type="hidden" id="txtId" asp-for="Id" >
+                <input type="text" class="form-control" id="txtNome" asp-for="Nome">
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="mb-3 row">

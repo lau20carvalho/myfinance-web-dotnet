@@ -5,8 +5,8 @@ namespace myfinance_web_dotnet.Infrastructure
 {
     public class MyFinanceDbContext : DbContext
     {
-        public DbSet<PlanoConta> PlanoConta { get; set; }
-        public DbSet<Transacao> Transacao { get; set; }
+        public required DbSet<PlanoConta> PlanoConta { get; set; }
+        public required DbSet<Transacao> Transacao { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

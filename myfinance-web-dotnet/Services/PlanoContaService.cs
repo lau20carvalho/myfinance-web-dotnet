@@ -10,13 +10,23 @@ namespace myfinance_web_dotnet.Services
 
         public void Excluir(int id)
         {
-            throw new NotImplementedException();
+            var item = BuscarRegistro(id);
+            myFinanceDbContext.Attach(item);
+            myFinanceDbContext.Remove(item);
+            myFinanceDbContext.SaveChanges();
         }
 
         public List<PlanoConta> ListarRegistros()
         {
             var lista = myFinanceDbContext.PlanoConta.ToList();
             return lista;
+        }
+
+        public PlanoConta BuscarRegistro(int id)
+        {
+            var planoConta = myFinanceDbContext.PlanoConta.Where(x => x.Id == id).First();
+
+            return planoConta;
         }
 
         public void Salvar(PlanoConta planoConta)
@@ -32,12 +42,6 @@ namespace myfinance_web_dotnet.Services
                 myFinanceDbContext.Entry(planoConta).State = EntityState.Modified;
             }
             myFinanceDbContext.SaveChanges();
-        }
-        public PlanoConta Buscar(int id)
-        {
-            var planoConta = myFinanceDbContext.PlanoConta.Find(id);
-
-            return planoConta ?? throw new ObjectDisposedException("Objeto não encontrado");
         }
     }
 }
